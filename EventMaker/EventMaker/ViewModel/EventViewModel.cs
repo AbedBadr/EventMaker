@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EventMaker.Model;
 
-namespace EventMaker.View
+namespace EventMaker.ViewModel
 {
     class EventViewModel
     {

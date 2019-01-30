@@ -125,7 +125,7 @@
     <Compile Include="View\EventPage.xaml.cs">
       <DependentUpon>EventPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EventViewModel.cs" />
+    <Compile Include="ViewModel\EventViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -165,7 +165,6 @@
     <Folder Include="Converter\" />
     <Folder Include="Handler\" />
     <Folder Include="Persistency\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
