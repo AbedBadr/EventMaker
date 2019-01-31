@@ -14,7 +14,8 @@
         <Grid.DataContext>
             <ViewModel:EventViewModel/>
         </Grid.DataContext>
-        <ListView HorizontalAlignment="Left" Height="555" Margin="296,77,0,0" VerticalAlignment="Top" Width="650"/>
+        <ListView HorizontalAlignment="Left" Height="555" Margin="296,77,0,0" VerticalAlignment="Top" Width="650" ItemsSource="{Binding ECSingleton.Events, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        </ListView>
 
     </Grid>
 </Page>

@@ -31,7 +31,7 @@ namespace EventMaker.Model
 
         public override string ToString()
         {
-            return $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Description)}: {Description}, {nameof(Place)}: {Place}, {nameof(DateTime)}: {DateTime}";
+            return $"{nameof(Id)}: {_id}, {nameof(Name)}: {_name}, {nameof(Description)}: {_description}, {nameof(Place)}: {_place}, {nameof(DateTime)}: {_dateTime}";
         }
     }
 }
