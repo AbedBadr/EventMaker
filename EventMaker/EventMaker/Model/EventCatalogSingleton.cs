@@ -9,7 +9,7 @@ namespace EventMaker.Model
 {
     class EventCatalogSingleton
     {
-        private static EventCatalogSingleton _instance;
+        private static EventCatalogSingleton _instance/*= new EventCatalogSingleton()*/;
 
         public static EventCatalogSingleton Instance
         {
