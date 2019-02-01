@@ -5,17 +5,37 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:EventMaker.ViewModel"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="EventMaker.View.EventPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <ViewModel:EventViewModel/>
+    </Page.DataContext>
 
     <Grid>
-
-        <Grid.DataContext>
-            <ViewModel:EventViewModel/>
-        </Grid.DataContext>
-        <ListView HorizontalAlignment="Left" Height="555" Margin="296,77,0,0" VerticalAlignment="Top" Width="650" ItemsSource="{Binding ECSingleton.Events, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        <ListView HorizontalAlignment="Left" Margin="446,151,0,0" VerticalAlignment="Top" ItemsSource="{Binding ECSingleton.Events, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.Resources>
+                <DataTemplate x:Key="EventDataTemplate">
+                    <StackPanel Padding="0,0,0,20" BorderBrush="Black" BorderThickness="0,2,0,0">
+                        <TextBlock x:Name="NameTB" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18"/>
+                        <TextBlock x:Name="DescriptionTB" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18"/>
+                        <TextBlock x:Name="PlaceTB" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18"/>
+                        <TextBlock x:Name="DateTimeTB" TextWrapping="Wrap" Text="{Binding DateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <StaticResource ResourceKey="EventDataTemplate"/>
+            </ListView.ItemTemplate>
         </ListView>
+        <AppBarButton HorizontalAlignment="Left" Height="78" Icon="Accept" Label="Next&#xD;&#xA;" Margin="91,151,0,0" VerticalAlignment="Top" Width="153" BorderBrush="Black" BorderThickness="1">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="EventMaker.View.CreateEventPage"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </AppBarButton>
 
     </Grid>
 </Page>
