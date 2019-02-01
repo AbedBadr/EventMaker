@@ -14,7 +14,7 @@
     </Page.DataContext>
 
     <Grid>
-        <ListView HorizontalAlignment="Left" Margin="446,151,0,0" VerticalAlignment="Top" ItemsSource="{Binding ECSingleton.Events, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        <ListView HorizontalAlignment="Left" Margin="446,151,0,0" VerticalAlignment="Top" ItemsSource="{Binding ECSingleton.Events, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="ListView_SelectionChanged">
             <ListView.Resources>
                 <DataTemplate x:Key="EventDataTemplate">
                     <StackPanel Padding="0,0,0,20" BorderBrush="Black" BorderThickness="0,2,0,0">
@@ -29,7 +29,7 @@
                 <StaticResource ResourceKey="EventDataTemplate"/>
             </ListView.ItemTemplate>
         </ListView>
-        <AppBarButton HorizontalAlignment="Left" Height="78" Icon="Accept" Label="Next&#xD;&#xA;" Margin="91,151,0,0" VerticalAlignment="Top" Width="153" BorderBrush="Black" BorderThickness="1">
+        <AppBarButton HorizontalAlignment="Left" Height="78" Icon="Accept" Label="Next&#xA;" Margin="91,151,0,0" VerticalAlignment="Top" Width="153" BorderBrush="Black" BorderThickness="1">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="EventMaker.View.CreateEventPage"/>
