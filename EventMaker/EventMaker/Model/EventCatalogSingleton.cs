@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventMaker.Persistency;
 
 namespace EventMaker.Model
 {
@@ -24,6 +25,18 @@ namespace EventMaker.Model
             LoadTestEvents();
         }
 
+        public async void LoadEventsAsync()
+        {
+            var events = await PersistencyService.LoadEventsFromJsonAsync();
+            if (events != null)
+            {
+                foreach (var ev in events)
+                {
+                    Events.Add(ev);
+                }
+            }
+        }
+
         public void LoadTestEvents()
         {
             Events.Add(new Event(1, "Fødselsdag", "Maher's fødselsdag", "Vapnagård 11", new DateTime(2019, 3, 10, 9, 45, 00)));
@@ -34,6 +47,19 @@ namespace EventMaker.Model
         public void Add(int id, string name, string description, string place, DateTime dateTime)
         {
             Events.Add(new Event(id, name, description, place, dateTime));
+            PersistencyService.SaveEventsAsJsonAsync(Events);
+        }
+
+        public void Add(Event ev)
+        {
+            Events.Add(ev);
+            PersistencyService.SaveEventsAsJsonAsync(Events);
+        }
+
+        public void Remove(Event ev)
+        {
+            Events.Remove(ev);
+            PersistencyService.SaveEventsAsJsonAsync(Events);
         }
     }
 }
