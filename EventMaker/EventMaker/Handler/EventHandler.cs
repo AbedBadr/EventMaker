@@ -20,7 +20,17 @@ namespace EventMaker.Handler
 
         public void CreateEvent()
         {
-            EventVM.ECSingleton.Events.Add(new Event(EventVM.Id, EventVM.Name, EventVM.Description, EventVM.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(EventVM.Date, EventVM.Time)));
+            EventVM.ECSingleton.Add(new Event(EventVM.Id, EventVM.Name, EventVM.Description, EventVM.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(EventVM.Date, EventVM.Time)));
+        }
+
+        public void DeleteEvent()
+        {/*
+            EventVM.ECSingleton.Remove();*/ // MANGLER
+        }
+
+        public void SetSelectedEvent()
+        {
+            //MANGLER // MANGLER // MANGLER
         }
     }
 }

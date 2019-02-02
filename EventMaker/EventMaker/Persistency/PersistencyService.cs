@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 namespace EventMaker.Persistency
 {
     // Json.Net er downloaded til projektet via NuGet.
+
     class PersistencyService
     {
         private static string JsonFileName = "Events.json";

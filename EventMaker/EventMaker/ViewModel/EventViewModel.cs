@@ -25,6 +25,8 @@ namespace EventMaker.ViewModel
 
         public ICommand CreateEventCommand { get; set; }
 
+        public Event SelectedEvent { get; set; } //MANGLER // MANGLER // MANGLER // OPG 5
+
         public EventViewModel()
         {
             ECSingleton = EventCatalogSingleton.Instance;
