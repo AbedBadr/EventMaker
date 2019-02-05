@@ -16,15 +16,15 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="155,248,0,0" VerticalAlignment="Top" Orientation="Horizontal">
-            <TextBox x:Name="IdTB" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="100" PlaceholderText="Id"/>
-            <TextBox x:Name="NameTB" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="100" PlaceholderText="Name"/>
-            <TextBox x:Name="DescriptionTB" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="100" PlaceholderText="Description"/>
-            <TextBox x:Name="PlaceTB" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="100" PlaceholderText="Place"/>
-            <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="100" Date="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TimePicker x:Name="TimePicker" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="100" Time="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="IdTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Id"/>
+            <TextBox x:Name="NameTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Name"/>
+            <TextBox x:Name="DescriptionTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Description"/>
+            <TextBox x:Name="PlaceTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Place"/>
+            <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TimePicker x:Name="TimePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Time="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
-        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Accept" Label="Add" Margin="155,359,0,0" VerticalAlignment="Top" Width="150" Command="{Binding CreateEventCommand}"/>
-        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Accept" Label="Return&#xD;&#xA;" Margin="310,359,0,0" VerticalAlignment="Top" Width="150" ToolTipService.ToolTip="Returns to previous page">
+        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Add" Label="Add" Margin="155,280,0,0" VerticalAlignment="Top" Width="150" Command="{Binding CreateEventCommand}"/>
+        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Redo" Label="Return&#xD;&#xA;" Margin="310,280,0,0" VerticalAlignment="Top" Width="150" ToolTipService.ToolTip="Returns to previous page">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="EventMaker.View.EventPage"/>

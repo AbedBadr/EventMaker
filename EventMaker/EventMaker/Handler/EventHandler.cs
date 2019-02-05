@@ -26,9 +26,9 @@ namespace EventMaker.Handler
 
         public void DeleteEvent()
         {
-            var messageDialog =
+            /*var messageDialog =
                 new MessageDialog("Are you sure you want to delete the Event: " + EventViewModel.SelectedEvent.Name + "?");
-
+                */
             EventVM.ECSingleton.Remove(EventViewModel.SelectedEvent);
         }
 

@@ -12,14 +12,18 @@ namespace EventMaker.ViewModel
 {
     class EventViewModel
     {
+        #region Instance fields
+        private ICommand _selectEventCommand;
+        private ICommand _deleteEventCommand;
+        #endregion 
+
+        #region Properties
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Place { get; set; }
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
-
-        private ICommand _selectEventCommand;
 
         public EventCatalogSingleton ECSingleton { get; set; }
 
@@ -38,6 +42,14 @@ namespace EventMaker.ViewModel
             set { _selectEventCommand = value; }
         }
 
+        public ICommand DeleteEventCommand
+        {
+            get { return _deleteEventCommand ?? (_selectEventCommand = new RelayCommand(EventHandler.DeleteEvent)); }
+            set { _deleteEventCommand = value; }
+        }
+        #endregion
+
+        #region Constructor
         public EventViewModel()
         {
             ECSingleton = EventCatalogSingleton.Instance;
@@ -49,5 +61,6 @@ namespace EventMaker.ViewModel
             EventHandler = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
         }
+        #endregion 
     }
 }
