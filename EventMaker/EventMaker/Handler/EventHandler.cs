@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using EventMaker.Converter;
 using EventMaker.Model;
 using EventMaker.ViewModel;
@@ -24,13 +25,16 @@ namespace EventMaker.Handler
         }
 
         public void DeleteEvent()
-        {/*
-            EventVM.ECSingleton.Remove();*/ // MANGLER
+        {
+            var messageDialog =
+                new MessageDialog("Are you sure you want to delete the Event: " + EventViewModel.SelectedEvent.Name + "?");
+
+            EventVM.ECSingleton.Remove(EventViewModel.SelectedEvent);
         }
 
-        public void SetSelectedEvent()
+        public void SetSelectedEvent(Event ev)
         {
-            //MANGLER // MANGLER // MANGLER
+            EventViewModel.SelectedEvent = ev;
         }
     }
 }

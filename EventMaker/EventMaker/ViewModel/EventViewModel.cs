@@ -19,13 +19,24 @@ namespace EventMaker.ViewModel
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
 
+        private ICommand _selectEventCommand;
+
         public EventCatalogSingleton ECSingleton { get; set; }
 
         public Handler.EventHandler EventHandler { get; set; }
 
         public ICommand CreateEventCommand { get; set; }
 
-        public Event SelectedEvent { get; set; } //MANGLER // MANGLER // MANGLER // OPG 5
+        public static Event SelectedEvent { get; set; }
+
+        public ICommand SelectEventCommand
+        {
+            get
+            {
+                return _selectEventCommand ?? (_selectEventCommand =
+                           new RelayArgCommand<Event>(ev => EventHandler.SetSelectedEvent(ev))); }
+            set { _selectEventCommand = value; }
+        }
 
         public EventViewModel()
         {
