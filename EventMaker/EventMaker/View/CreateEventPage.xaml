@@ -15,16 +15,22 @@
     </Page.DataContext>
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Margin="155,248,0,0" VerticalAlignment="Top" Orientation="Horizontal">
-            <TextBox x:Name="IdTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Id"/>
-            <TextBox x:Name="NameTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Name"/>
-            <TextBox x:Name="DescriptionTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Description"/>
-            <TextBox x:Name="PlaceTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Place"/>
-            <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TimePicker x:Name="TimePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Time="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <StackPanel HorizontalAlignment="Left" Margin="478,284,0,0" VerticalAlignment="Top">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBox x:Name="IdTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Id" Width="138"/>
+                <TextBox x:Name="NameTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Name" Width="157"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBox x:Name="PlaceTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Place" Width="138"/>
+                <TextBox x:Name="DescriptionTB" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" PlaceholderText="Description" Width="157"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Date="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,-162,0" Width="267"/>
+                <TimePicker x:Name="TimePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Time="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,-108,0" Width="295"/>
+            </StackPanel>
         </StackPanel>
-        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Add" Label="Add" Margin="155,280,0,0" VerticalAlignment="Top" Width="150" Command="{Binding CreateEventCommand}"/>
-        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Redo" Label="Return&#xD;&#xA;" Margin="310,280,0,0" VerticalAlignment="Top" Width="150" ToolTipService.ToolTip="Returns to previous page">
+        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Add" Label="Add" Margin="478,412,0,0" VerticalAlignment="Top" Width="145" Command="{Binding CreateEventCommand}" ToolTipService.ToolTip="Adds a new Event to the listView" Click="ButtonBase_OnClick"/>
+        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Redo" Label="Return&#xD;&#xA;" Margin="628,412,0,0" VerticalAlignment="Top" Width="145" ToolTipService.ToolTip="Returns to previous page">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="EventMaker.View.EventPage"/>

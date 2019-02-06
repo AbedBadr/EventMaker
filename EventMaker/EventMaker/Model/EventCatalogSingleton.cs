@@ -26,7 +26,7 @@ namespace EventMaker.Model
             LoadFraFil();
         }
 
-        public async void LoadEventsAsync()
+        /*public async void LoadEventsAsync()
         {
             var events = await PersistencyService.LoadEventsFromJsonAsync();
             if (events != null)
@@ -36,16 +36,19 @@ namespace EventMaker.Model
                     Events.Add(ev);
                 }
             }
-        }
+        }*/
 
         public async void LoadFraFil()
         {
             List<Event> myEvents = new List<Event>();
             myEvents = await PersistencyService.LoadEventsFromJsonAsync();
 
-            foreach (Event ev in myEvents)
+            if (myEvents != null)
             {
-                Events.Add(ev);
+                foreach (Event ev in myEvents)
+                {
+                    Events.Add(ev);
+                }
             }
         }
 

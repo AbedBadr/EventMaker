@@ -34,14 +34,14 @@
                 <StaticResource ResourceKey="EventDataTemplate"/>
             </ListView.ItemTemplate>
         </ListView>
-        <AppBarButton HorizontalAlignment="Left" Height="78" Icon="Next" Label="Next&#xA;" Margin="91,151,0,0" VerticalAlignment="Top" Width="153" BorderBrush="Black" BorderThickness="1">
+        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Next" Label="Next&#xA;" Margin="91,151,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" BorderThickness="1" ToolTipService.ToolTip="Go to next page">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="EventMaker.View.CreateEventPage"/>
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </AppBarButton>
-        <AppBarButton HorizontalAlignment="Left" Height="92" Icon="Delete" Label="Remove" Margin="95,274,0,0" VerticalAlignment="Top" Width="148" Command="{Binding DeleteEventCommand}"/>
+        <AppBarButton HorizontalAlignment="Left" Height="90" Icon="Delete" Label="Remove" Margin="91,273,0,0" VerticalAlignment="Top" Width="150" Command="{Binding DeleteEventCommand}" BorderThickness="1" BorderBrush="Black" ToolTipService.ToolTip="Removes an Event from the listView"/>
 
     </Grid>
 </Page>
